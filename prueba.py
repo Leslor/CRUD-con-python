@@ -4,4 +4,6 @@ uid[0]=0
 uid_student={uid: student for uid, student in zip(uid ,students)}
 
 
-print(uid_student)
+#Comentario para probar reset HEAD
+
+print(uid_student,"Nuevo")
