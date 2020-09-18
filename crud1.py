@@ -61,7 +61,7 @@ def _get_client_field(field_name, message='What is the client {}?'):
 
 def _get_client_from_user():
     client={
-        'name':_get_client_field('name'),
+        'name':_get_client_field('name').capitalize(),
         'company':_get_client_field('company'),
         'email':_get_client_field('email'),
         'position':_get_client_field('position'),
@@ -87,7 +87,7 @@ def _initialize_clients_form_storage():
         reader=csv.DictReader(f, fieldnames=CLIENT_SCHEMA)
         for row in reader:
             clients.append(row)
-
+    
 
 def _save_client_to_storage():
     tmp_table_name='{}.tmp'.format(CLIENT_TABLE)
@@ -101,7 +101,8 @@ def _save_client_to_storage():
 
     
 if __name__=='__main__':
-
+    
+    
     _initialize_clients_form_storage()
    
     _print_welcome()
@@ -125,7 +126,7 @@ if __name__=='__main__':
         delete_client(client_id)
      
     elif command=='S':
-        client_name=_get_client_field('name')
+        client_name=_get_client_field('name').capitalize()
         found=search_client(client_name)
         if found:
             print('The client is in the client\'s list')
