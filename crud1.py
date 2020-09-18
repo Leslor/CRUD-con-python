@@ -2,7 +2,7 @@ import csv
 import os
 
 
-CLIENT_SCHEMA=['name', 'company', 'email','position']
+CLIENT_SCHEMA=['name', 'company', 'email','position','description']
 CLIENT_TABLE='.clients.csv.'
 clients=[]
 
@@ -16,16 +16,17 @@ def create_client(client):
 
 
 def list_clients():
-    print('uid|name|company|email|position')
+    print('uid|name|company|email|position|description')
     print('*'*50)
 
     for idx, client in enumerate(clients):
-        print('{uid}|{name}|{company}|{email}|{position}'.format(
+        print('{uid}|{name}|{company}|{email}|{position}|{description}'.format(
             uid=idx,
             name=client['name'],
             company=client['company'],
             email=client['email'],
-            position=client['position']))
+            position=client['position'],
+            description=client['description']))
 
 
 def update_client(client_id, update_client):
@@ -64,6 +65,7 @@ def _get_client_from_user():
         'company':_get_client_field('company'),
         'email':_get_client_field('email'),
         'position':_get_client_field('position'),
+        'description':_get_client_field('description')
                 }    
     return client
 
