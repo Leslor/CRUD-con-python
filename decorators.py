@@ -1,23 +1,19 @@
 
-import crypt
-import os
-sentencia='12345'
-PASSWORD=crypt.crypt(sentencia,'salt')
-print(PASSWORD)
+PASSWORD='12345'
 
 def password_required(func):
     def wrapper():
         password=input('Ingrese contraseña: ')
         
         while not password or password !=PASSWORD:
-                print('La contrasena no es correcta.')
-                password=input('Ingrese contraseña: ')
+            print('La contrasena no es correcta.')
+            password=input('Ingrese contraseña: ')
+        return password
         
         if password ==PASSWORD:
-            return func()                   
+            return func()           
 
     return wrapper
-
 
 @password_required    
 def needs_password():
@@ -25,4 +21,6 @@ def needs_password():
 
 
 if __name__=='__main__':
-    needs_password()
+    print(needs_password())
+
+    

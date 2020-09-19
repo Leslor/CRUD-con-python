@@ -5,7 +5,7 @@ import os
 CLIENT_SCHEMA=['name', 'company', 'email','position','description']
 CLIENT_TABLE='.clients.csv.'
 clients=[]
-
+PASSWORD='12345'
 
 def create_client(client):
     global clients
@@ -69,6 +69,24 @@ def _get_client_from_user():
                 }    
     return client
 
+def password_required(func):
+    def wrapper():
+        password=input('Ingrese contraseña: ')
+        
+        while not password or password !=PASSWORD:
+                print('La contrasena no es correcta.')
+                password=input('Ingrese contraseña: ')
+        
+        if password ==PASSWORD:
+            return func()                   
+
+    return wrapper
+
+
+@password_required    
+def needs_password():
+    print('La contraseña es correcta')
+
 
 def _print_welcome():
     print('WELCOME TO #### VENTAS')
@@ -102,9 +120,10 @@ def _save_client_to_storage():
     
 if __name__=='__main__':
     
-    
-    _initialize_clients_form_storage()
    
+    needs_password()
+    _initialize_clients_form_storage()
+
     _print_welcome()
 
     command=input().upper()
