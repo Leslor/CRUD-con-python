@@ -1,9 +1,6 @@
 
-import crypt
-import os
-sentencia='12345'
-PASSWORD=crypt.crypt(sentencia,'salt')
-print(PASSWORD)
+PASSWORD='12345'
+
 
 def password_required(func):
     def wrapper():
