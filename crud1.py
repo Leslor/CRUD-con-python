@@ -12,7 +12,7 @@ def create_client(client):
     if client not in clients:
         clients.append(client) 
     else:
-        print('Client alredy is in the client\'s list')
+        print('El cliente se encuntra en la lista')
 
 
 def list_clients():
@@ -34,7 +34,7 @@ def update_client(client_id, update_client):
     if len(clients) -1>=client_id:
         clients[client_id]=update_client
     else:
-        print('Client not in client\'s list')
+        print('El cliente no está en la lista')
 
 
 def delete_client(cliente_id):
@@ -74,7 +74,7 @@ def password_required(func):
         password=input('Ingrese contraseña: ')
         
         while not password or password !=PASSWORD:
-                print('La contrasena no es correcta.')
+                print('La contrasena no es correcta. Por favor, coloque la correcta')
                 password=input('Ingrese contraseña: ')
         
         if password ==PASSWORD:
