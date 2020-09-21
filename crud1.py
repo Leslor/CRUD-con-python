@@ -89,7 +89,7 @@ def needs_password():
 
 
 def _print_welcome():
-    print('WELCOME TO #### VENTAS')
+    print('WELCOME TO CLIENT REGISTRATION')
     print('*'*50)
     print("""What would you like to do?
              [C]reate client
