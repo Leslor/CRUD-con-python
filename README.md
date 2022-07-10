@@ -30,15 +30,16 @@ CRUD is an acronym that comes from the world of computer programming and refers 
 
 ```
 $ ./console.py
-(hbnb) help
+WELCOME TO CLIENT REGISTRATION
+**************************************************
+What would you like to do?
+             [C]reate client
+			 [L]ist client
+			 [U]pdate client
+			 [D]elete client
+			 [S]earch client
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
 
-(hbnb) 
-(hbnb) 
-(hbnb) quit
 $
 ```
 ```
